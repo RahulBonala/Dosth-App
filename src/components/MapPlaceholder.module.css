@@ -1,0 +1,118 @@
+.mapContainer {
+    width: 100%;
+    height: 300px;
+    background-color: #e5e7eb;
+    border-radius: var(--radius-md);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    border: 2px solid var(--color-border);
+}
+
+.mapBackground {
+    position: absolute;
+    inset: 0;
+    opacity: 0.6;
+    background-image: radial-gradient(#cbd5e1 20%, transparent 20%),
+        radial-gradient(#cbd5e1 20%, transparent 20%);
+    background-position: 0 0, 10px 10px;
+    background-size: 20px 20px;
+}
+
+.road {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: #94a3b8;
+    transform: translateY(-50%);
+}
+
+.roadVertical {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    height: 100%;
+    width: 40px;
+    background: #94a3b8;
+    transform: translateX(-50%);
+}
+
+.marker {
+    position: absolute;
+    font-size: 2rem;
+    z-index: 10;
+}
+
+.shop {
+    top: 20px;
+    left: 20px;
+}
+
+.user {
+    bottom: 20px;
+    right: 20px;
+}
+
+.label {
+    font-size: 0.8rem;
+    background: white;
+    padding: 2px 4px;
+    border-radius: 4px;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    box-shadow: var(--shadow-sm);
+}
+
+.rider {
+    position: absolute;
+    font-size: 2.5rem;
+    z-index: 20;
+    transition: all 4s linear;
+}
+
+.riderMoving {
+    top: 20px;
+    left: 20px;
+    animation: ride 4s linear forwards;
+}
+
+.riderArrived {
+    bottom: 20px;
+    right: 70px;
+    /* Parked near user */
+}
+
+@keyframes ride {
+    0% {
+        top: 20px;
+        left: 20px;
+    }
+
+    50% {
+        top: 50%;
+        left: 50%;
+    }
+
+    100% {
+        top: 80%;
+        left: 80%;
+    }
+}
+
+.statusOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.5rem;
+    text-align: center;
+    font-weight: 600;
+    color: var(--color-primary);
+    backdrop-filter: blur(4px);
+}

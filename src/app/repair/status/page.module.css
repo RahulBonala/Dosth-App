@@ -1,0 +1,174 @@
+.main {
+    padding: 2rem 1rem;
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+
+.timelineContainer {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.timelineItem {
+    display: flex;
+    gap: 1rem;
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.line {
+    position: absolute;
+    left: 20px;
+    /* Center of icon (40px) */
+    top: 40px;
+    bottom: 0;
+    width: 2px;
+    background-color: #e5e7eb;
+    z-index: 0;
+}
+
+.timelineItem:last-child .line {
+    display: none;
+}
+
+.iconCompleted,
+.iconActive,
+.iconPending {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    z-index: 1;
+    flex-shrink: 0;
+}
+
+.iconCompleted {
+    background-color: #0fb143;
+    /* Green */
+    color: white;
+}
+
+.iconActive {
+    background-color: #1a56db;
+    /* Blue */
+    color: white;
+    box-shadow: 0 0 0 4px #e0e7ff;
+}
+
+.iconPending {
+    background-color: #e5e7eb;
+    /* Grey */
+    color: #6b7280;
+}
+
+.content {
+    flex: 1;
+    padding-top: 0.5rem;
+}
+
+.content h3 {
+    font-size: 1rem;
+    color: #374151;
+    margin-bottom: 0.25rem;
+}
+
+.statusLabel {
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+/* Specific Card Styles */
+.estimateCard {
+    background: #f0f6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-top: 0.5rem;
+}
+
+.estimateHeader {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.eta {
+    background: #e2e8f0;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+}
+
+.amount {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2563eb;
+    margin-bottom: 0.5rem;
+}
+
+.cardActions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.approveBtn {
+    background: #059669;
+    /* Green */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    flex: 1;
+}
+
+.declineBtn {
+    background: white;
+    color: #dc2626;
+    /* Red */
+    border: 1px solid #fecaca;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    flex: 1;
+}
+
+.actionBox {
+    margin-top: 0.5rem;
+}
+
+.actionBtn {
+    background: #1a56db;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.progressBar {
+    height: 6px;
+    background: #e5e7eb;
+    border-radius: 3px;
+    margin-top: 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    background: #1a56db;
+    transition: width 0.1s linear;
+}

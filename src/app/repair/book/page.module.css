@@ -1,0 +1,153 @@
+.main {
+    padding: 2rem 1rem;
+    min-height: calc(100vh - 80px);
+    background-color: var(--color-bg);
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--color-surface);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.title {
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.formGroup label {
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.formGroup input,
+.formGroup textarea {
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.readOnly {
+    background-color: var(--color-bg);
+    color: var(--color-text-muted);
+    cursor: default;
+}
+
+.hint {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+}
+
+.summary {
+    background: var(--color-bg);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    text-align: center;
+    border: 1px dashed var(--color-primary);
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 0.5rem 0;
+}
+
+.submitBtn {
+    background: var(--color-primary);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.submitBtn:hover {
+    background: var(--color-primary-dark);
+}
+
+/* Location Features */
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.inputWrapper input {
+    width: 100%;
+    padding-right: 40px;
+    /* Space for the button */
+}
+
+.locationBtn {
+    position: absolute;
+    right: 8px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 4px;
+    transition: transform 0.2s;
+}
+
+.locationBtn:hover {
+    transform: scale(1.1);
+}
+
+.recommendationBox {
+    background: #f0bdd11f;
+    border: 1px solid var(--color-primary-light);
+    color: var(--color-primary-dark);
+    padding: 0.75rem;
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.star {
+    color: var(--color-accent);
+    font-size: 1.2rem;
+}
+
+.linkBtn {
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    text-decoration: underline;
+    font-size: 0.85rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    text-align: left;
+    padding: 0;
+}
+
+.linkBtn:hover {
+    color: var(--color-primary);
+}
+
+.manualSelection {
+    display: flex;
+    flex-direction: column;
+}

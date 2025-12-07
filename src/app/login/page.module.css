@@ -1,0 +1,182 @@
+.main {
+    min-height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    font-family: 'Inter', sans-serif;
+}
+
+.headerSection {
+    background-color: #1a56db;
+    /* Royal Blue */
+    padding: 3rem 1rem 6rem;
+    /* Extra padding bottom for overlap */
+    color: white;
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.iconWrapper {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.headerSection h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.headerSection p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.cardContainer {
+    padding: 0 1.5rem;
+    margin-top: -3rem;
+    /* Overlap effect */
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.card h2 {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color: #1f2937;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.inputGroup label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.inputIcon {
+    position: absolute;
+    left: 12px;
+    color: #9ca3af;
+    font-size: 1.1rem;
+}
+
+.inputWrapper input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background-color: #f9fafb;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.inputWrapper input:focus {
+    border-color: #1a56db;
+    background-color: white;
+}
+
+.loginBtn {
+    background-color: #1a56db;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.loginBtn:hover {
+    opacity: 0.9;
+}
+
+.signupText {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.signupText a {
+    color: #1a56db;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.divider {
+    text-align: center;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.divider::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+    background: #e5e7eb;
+    z-index: 0;
+}
+
+.divider span {
+    background: white;
+    padding: 0 10px;
+    color: #9ca3af;
+    font-size: 0.85rem;
+    position: relative;
+    z-index: 1;
+}
+
+.socialButtons {
+    display: flex;
+    gap: 1rem;
+}
+
+.socialBtn {
+    flex: 1;
+    padding: 10px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #374151;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.socialBtn:hover {
+    background: #f9fafb;
+}
