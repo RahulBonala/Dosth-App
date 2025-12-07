@@ -10,11 +10,7 @@
     align-items: center;
 }
 
-@media (prefers-color-scheme: dark) {
-    .header {
-        background: rgba(var(--hue-primary), 20%, 10%, 0.8);
-    }
-}
+
 
 .container {
     width: 100%;

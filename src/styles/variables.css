@@ -22,25 +22,13 @@
   --color-text-muted: hsl(220, 10%, 45%);
   --color-border: hsl(220, 15%, 90%);
 
-  /* Dark Theme Overrides */
-  @media (prefers-color-scheme: dark) {
-    --color-bg: hsl(222, 47%, 11%);
-    --color-surface: hsl(222, 40%, 18%);
-    --color-text: hsl(210, 20%, 96%);
-    --color-text-muted: hsl(215, 15%, 65%);
-    --color-border: hsl(217, 30%, 25%);
-
-    --lig-primary: 65%;
-    /* Little lighter for dark mode */
-  }
-
   /* Typography */
   --font-sans: 'Inter',
-  system-ui,
-  -apple-system,
-  sans-serif;
+    system-ui,
+    -apple-system,
+    sans-serif;
   --font-heading: 'Outfit',
-  sans-serif;
+    sans-serif;
 
   /* Spacing */
   --space-xs: 0.25rem;
@@ -53,9 +41,9 @@
   /* Shadows */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-  0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-  0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --shadow-glow: 0 0 15px var(--color-primary);
 
   /* Radius */

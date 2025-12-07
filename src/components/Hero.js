@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Button from './Button';
 import styles from './Hero.module.css';
 
@@ -21,9 +22,14 @@ export default function Hero() {
                 </div>
             </div>
             <div className={styles.visual}>
-                <div className={styles.circle}></div>
-                <div className={styles.card}>
-                    <span>Dosth App</span>
+                <div className={styles.logoWrapper}>
+                    <Image
+                        src="/logo.png"
+                        alt="Dosth App Logo"
+                        fill
+                        style={{ objectFit: 'contain' }}
+                        priority
+                    />
                 </div>
             </div>
         </section>
