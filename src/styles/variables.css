@@ -1,0 +1,57 @@
+:root {
+  /* Colors - Light Theme Default (Can be toggled) */
+  --hue-primary: 230;
+  --sat-primary: 85%;
+  --lig-primary: 60%;
+  --color-primary: hsl(var(--hue-primary), var(--sat-primary), var(--lig-primary));
+  --color-primary-dark: hsl(var(--hue-primary), var(--sat-primary), 50%);
+  --color-primary-light: hsl(var(--hue-primary), var(--sat-primary), 75%);
+
+  --hue-secondary: 260; /* Purple/Violet */
+  --color-secondary: hsl(var(--hue-secondary), 90%, 65%);
+
+  --hue-accent: 35; /* Gold/Orange */
+  --color-accent: hsl(var(--hue-accent), 100%, 55%);
+
+  /* Neutrals */
+  --color-bg: hsl(220, 20%, 97%);
+  --color-surface: hsl(0, 0%, 100%);
+  --color-text: hsl(222, 20%, 15%);
+  --color-text-muted: hsl(220, 10%, 45%);
+  --color-border: hsl(220, 15%, 90%);
+
+  /* Dark Theme Overrides */
+  @media (prefers-color-scheme: dark) {
+    --color-bg: hsl(222, 47%, 11%);
+    --color-surface: hsl(222, 40%, 18%);
+    --color-text: hsl(210, 20%, 96%);
+    --color-text-muted: hsl(215, 15%, 65%);
+    --color-border: hsl(217, 30%, 25%);
+    
+    --lig-primary: 65%; /* Little lighter for dark mode */
+  }
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+  --shadow-glow: 0 0 15px var(--color-primary);
+
+  /* Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
+}

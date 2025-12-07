@@ -1,0 +1,37 @@
+.main {
+    padding: var(--space-xl) 0;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+.pageHeader {
+    margin-bottom: var(--space-2xl);
+    text-align: center;
+}
+
+.pageHeader h1 {
+    font-size: 2.5rem;
+    color: var(--color-primary-dark);
+}
+
+.pageHeader p {
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+    .pageHeader h1 {
+        font-size: 3.5rem;
+    }
+}
