@@ -77,7 +77,7 @@ function BookingContent() {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Redirect to status page with query params to persist state for demo
-        router.push(`/repair/status?service=${encodeURIComponent(serviceName)}&step=rider_coming`);
+        router.push(`/repair/status?service=${encodeURIComponent(serviceName)}&step=pickup_scheduled`);
     };
 
     return (
@@ -145,11 +145,7 @@ function BookingContent() {
                         ></textarea>
                     </div>
 
-                    <div className={styles.summary}>
-                        <h3>Estimated Cost</h3>
-                        <p className={styles.price}>₹200 - ₹500</p>
-                        <small>Final price after diagnosis.</small>
-                    </div>
+
 
                     <button type="submit" className={styles.submitBtn}>
                         Confirm Booking

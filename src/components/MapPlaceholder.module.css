@@ -1,118 +1,201 @@
 .mapContainer {
     width: 100%;
-    height: 300px;
-    background-color: #e5e7eb;
-    border-radius: var(--radius-md);
+    height: 100%;
+    background-color: #e8eaed;
+    /* Google Maps land color */
     position: relative;
     overflow: hidden;
-    margin-bottom: 1.5rem;
-    border: 2px solid var(--color-border);
+    font-family: 'Roboto', sans-serif;
+    border-radius: 8px;
 }
 
+/* Background Pattern (Grid/Blocks) */
 .mapBackground {
     position: absolute;
-    inset: 0;
-    opacity: 0.6;
-    background-image: radial-gradient(#cbd5e1 20%, transparent 20%),
-        radial-gradient(#cbd5e1 20%, transparent 20%);
-    background-position: 0 0, 10px 10px;
-    background-size: 20px 20px;
-}
-
-.road {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    background: #94a3b8;
-    transform: translateY(-50%);
-}
-
-.roadVertical {
-    position: absolute;
-    left: 50%;
     top: 0;
-    height: 100%;
-    width: 40px;
-    background: #94a3b8;
-    transform: translateX(-50%);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        linear-gradient(#dce2e8 2px, transparent 2px),
+        linear-gradient(90deg, #dce2e8 2px, transparent 2px);
+    background-size: 100px 100px;
+    z-index: 1;
 }
 
+/* Water (River/Lake simulation) */
+.water {
+    position: absolute;
+    background-color: #aadaff;
+    width: 200px;
+    height: 150px;
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    top: 20%;
+    right: -50px;
+    z-index: 2;
+    opacity: 0.8;
+}
+
+.park {
+    position: absolute;
+    background-color: #c5e8c5;
+    width: 150px;
+    height: 120px;
+    border-radius: 20px;
+    bottom: 10%;
+    left: 10%;
+    z-index: 2;
+}
+
+/* Roads */
+.roadMain {
+    position: absolute;
+    background-color: #ffffff;
+    height: 12px;
+    width: 120%;
+    top: 50%;
+    left: -10%;
+    transform: rotate(-15deg);
+    box-shadow: 0 0 2px #ccc;
+    z-index: 3;
+    border: 1px solid #e6e6e6;
+}
+
+.roadSec {
+    position: absolute;
+    background-color: #ffffff;
+    width: 10px;
+    height: 120%;
+    left: 40%;
+    top: -10%;
+    transform: rotate(15deg);
+    box-shadow: 0 0 2px #ccc;
+    z-index: 3;
+    border: 1px solid #e6e6e6;
+}
+
+/* Markers */
 .marker {
     position: absolute;
-    font-size: 2rem;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     z-index: 10;
-}
-
-.shop {
-    top: 20px;
-    left: 20px;
-}
-
-.user {
-    bottom: 20px;
-    right: 20px;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
+    transition: all 0.5s ease;
 }
 
 .label {
-    font-size: 0.8rem;
+    font-size: 10px;
     background: white;
-    padding: 2px 4px;
+    padding: 2px 6px;
     border-radius: 4px;
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-top: -5px;
+    font-weight: 700;
+    color: #444;
     white-space: nowrap;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+.shop {
+    top: 20%;
+    left: 20%;
+}
+
+.user {
+    bottom: 30%;
+    right: 25%;
+}
+
+/* Rider & Animations */
 .rider {
     position: absolute;
-    font-size: 2.5rem;
-    z-index: 20;
-    transition: all 4s linear;
+    font-size: 28px;
+    z-index: 11;
+    filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.2));
+    transition: top 3s cubic-bezier(0.45, 0, 0.55, 1), left 3s cubic-bezier(0.45, 0, 0.55, 1);
 }
 
-.riderMoving {
-    top: 20px;
-    left: 20px;
-    animation: ride 4s linear forwards;
+/* Animation States */
+/* Adjust these positions to match Shop/User somewhat */
+
+/* Pickup: Rider starts off-screen (top-right) -> goes to User (bottom-right) */
+.rider.rider_coming {
+    top: 10%;
+    left: 90%;
+    animation: moveToUser 4s forwards linear;
 }
 
-.riderArrived {
-    bottom: 20px;
-    right: 70px;
-    /* Parked near user */
+/* To Center: Rider starts at User (bottom-right) -> goes to Shop (top-left) */
+.rider.rider_to_center {
+    top: 60%;
+    left: 70%;
+    animation: moveToShop 4s forwards linear;
 }
 
-@keyframes ride {
+/* Delivery: Rider starts at Shop (top-left) -> goes to User (bottom-right) */
+.rider.delivery {
+    top: 25%;
+    left: 22%;
+    animation: deliverToUser 5s forwards linear;
+}
+
+@keyframes moveToUser {
     0% {
-        top: 20px;
-        left: 20px;
-    }
-
-    50% {
-        top: 50%;
-        left: 50%;
+        top: -10%;
+        left: 90%;
     }
 
     100% {
-        top: 80%;
-        left: 80%;
+        top: 65%;
+        left: 70%;
+    }
+
+    /* User pos */
+}
+
+@keyframes moveToShop {
+    0% {
+        top: 65%;
+        left: 70%;
+    }
+
+    100% {
+        top: 25%;
+        left: 22%;
+    }
+
+    /* Shop pos */
+}
+
+@keyframes deliverToUser {
+    0% {
+        top: 25%;
+        left: 22%;
+    }
+
+    100% {
+        top: 65%;
+        left: 70%;
     }
 }
 
 .statusOverlay {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 0.5rem;
-    text-align: center;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 12px;
     font-weight: 600;
-    color: var(--color-primary);
-    backdrop-filter: blur(4px);
+    color: #333;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    z-index: 20;
+    white-space: nowrap;
 }
