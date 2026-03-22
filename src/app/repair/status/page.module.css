@@ -1,346 +1,364 @@
 .main {
-    padding: 2rem 1rem;
-    min-height: 100vh;
-    background-color: #ffffff;
-    animation: fadeIn 0.5s ease-in-out;
+  min-height: 100vh;
+  padding: var(--space-8) 0 var(--space-24);
+  background: var(--color-bg);
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
 }
 
-.timelineContainer {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+.pageHeader {
+  margin-bottom: var(--space-10);
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.subtitle {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+}
+
+/* Timeline */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .timelineItem {
-    display: flex;
-    gap: 1rem;
-    position: relative;
-    padding-bottom: 2rem;
+  display: flex;
+  gap: var(--space-4);
+  position: relative;
+  padding-bottom: var(--space-10);
 }
 
-.line {
-    position: absolute;
-    left: 20px;
-    top: 40px;
-    bottom: 0;
-    width: 2px;
-    background-color: #e5e7eb;
-    z-index: 0;
+.timelineItem:last-child {
+  padding-bottom: 0;
 }
 
-.timelineItem:last-child .line {
-    display: none;
+.timelineLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 32px;
 }
 
-.iconCompleted,
-.iconActive,
-.iconPending {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    z-index: 1;
-    flex-shrink: 0;
+.timelineConnector {
+  width: 2px;
+  flex: 1;
+  background: var(--color-border);
+  margin-top: var(--space-2);
 }
 
-.iconCompleted {
-    background-color: #0fb143;
-    color: white;
+.timelineConnectorActive {
+  background: var(--color-primary);
 }
 
-.iconActive {
-    background-color: #1a56db;
-    color: white;
-    box-shadow: 0 0 0 4px #e0e7ff;
+.marker {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  background: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  z-index: 2;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.iconPending {
-    background-color: #e5e7eb;
-    color: #6b7280;
+.markerActive {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 0 0 4px var(--color-primary-soft);
+  animation: pulseMarker 2s infinite;
 }
 
-.content {
-    flex: 1;
-    padding-top: 0.5rem;
+.markerCompleted {
+  border-color: var(--color-success);
+  background: var(--color-success);
+  color: #fff;
 }
 
-.content h3 {
-    font-size: 1rem;
-    color: #374151;
-    margin-bottom: 0.25rem;
+@keyframes pulseMarker {
+  0% { box-shadow: 0 0 0 0 var(--color-primary-soft); }
+  70% { box-shadow: 0 0 0 10px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
 }
 
-.statusLabel {
-    font-size: 0.85rem;
-    color: #6b7280;
-    display: block;
-    margin-top: 0.25rem;
+.timelineContent {
+  flex: 1;
+  padding-top: 4px;
+}
+
+.stepTitle {
+  font-family: var(--font-heading);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-1);
+  transition: color 0.3s;
+}
+
+.stepTitleActive {
+  color: var(--color-text);
+}
+
+.stepTitleCompleted {
+  color: var(--color-text-secondary);
+}
+
+.statusCard {
+  margin-top: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-md);
+  animation: slideUp 0.4s ease both;
 }
 
 .statusDescription {
-    color: #4b5563;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-4);
+  line-height: 1.5;
 }
 
-/* Driver Info Card */
+/* Driver Card */
 .driverCard {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #f9fafb;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    padding: 0.75rem;
-    margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-surface-raised);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-4);
 }
 
-.driverDetails {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.driverAvatar {
-    width: 40px;
-    height: 40px;
-    background: #eff6ff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.25rem;
+.driverInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
 }
 
 .driverName {
-    font-weight: 600;
-    color: #111827;
-    font-size: 0.95rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
 }
 
 .driverPhone {
-    font-size: 0.85rem;
-    color: #6b7280;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin: 0;
 }
 
 .callBtn {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: #0fb143;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    transition: transform 0.1s;
+  width: 36px;
+  height: 36px;
+  background: var(--color-success);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: transform 0.2s;
 }
 
-.callBtn:active {
-    transform: scale(0.95);
+.callBtn:hover {
+  transform: scale(1.1);
 }
 
 /* Map Wrapper */
-.mapWrapper {
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    overflow: hidden;
-    margin-top: 0.5rem;
-    transition: height 0.3s ease;
+.mapBox {
+  margin-top: var(--space-4);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
 }
 
 .mapHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 0.75rem;
-    background: #f3f4f6;
-    border-bottom: 1px solid #e5e7eb;
+  background: var(--color-surface-raised);
+  padding: var(--space-2) var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border);
 }
 
-.mapHeader span {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #4b5563;
+.liveBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-error);
 }
 
-.toggleBtn {
-    background: none;
-    border: none;
-    color: #2563eb;
-    font-size: 0.8rem;
-    cursor: pointer;
-    font-weight: 500;
+.liveDot {
+  width: 6px;
+  height: 6px;
+  background: var(--color-error);
+  border-radius: 50%;
+  animation: pulseDot 1s infinite;
 }
 
-.mapContent {
-    height: 200px;
-    /* Default height */
-    position: relative;
-    background: #e5e7eb;
+.mapToggle {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-.minimized .mapContent {
-    height: 0;
-    padding: 0;
-}
-
-.minimized {
-    border-bottom: none;
-}
-
-
-/* Estimate Card & Actions */
-.estimateCard {
-    background: #f0f6ff;
-    border: 1px solid #bfdbfe;
-    border-radius: 12px;
-    padding: 1rem;
-    margin-top: 0.5rem;
-}
-
-.estimateHeader {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.9rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-}
-
-.amount {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #2563eb;
-    margin-bottom: 0.5rem;
-}
-
-.cardActions {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.approveBtn,
-.declineBtn,
-.actionBtn {
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    border: none;
-    font-size: 0.9rem;
-    flex: 1;
-}
-
-.approveBtn {
-    background: #059669;
-    color: white;
-}
-
-.declineBtn {
-    background: white;
-    color: #dc2626;
-    border: 1px solid #fecaca;
-}
-
-.actionBtn {
-    background: #1a56db;
-    color: white;
-    margin-top: 0.5rem;
-}
-
-/* Progress & Timers */
-.actionBox {
-    margin-top: 0.5rem;
+/* Progress Bar */
+.progressBox {
+  margin-top: var(--space-2);
 }
 
 .progressBar {
-    height: 6px;
-    background: #e5e7eb;
-    border-radius: 3px;
-    margin: 0.5rem 0;
-    overflow: hidden;
+  height: 8px;
+  background: var(--color-surface-raised);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-bottom: var(--space-2);
 }
 
 .progressFill {
-    height: 100%;
-    background: #1a56db;
-    transition: width 0.1s linear;
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+  border-radius: var(--radius-full);
+  transition: width 0.3s ease-out;
 }
 
-.deliveryChoice {
-    margin-top: 0.5rem;
+.progressMeta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
 }
 
-.timerWarning {
-    color: #dc2626;
-    font-size: 0.85rem;
-    font-weight: 500;
-    margin-top: 0.25rem;
+/* Estimate Card */
+.estimateCard {
+  background: var(--color-primary-soft);
+  border: 1px solid var(--color-primary-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
 }
 
-.finalBill {
-    margin-top: 1rem;
-    padding: 1rem;
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
+.estimatePrice {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: var(--space-1);
 }
 
-.finalBill h4 {
-    margin-bottom: 0.5rem;
-    font-size: 0.95rem;
-    color: #334155;
+.estimateDescription {
+  font-size: 0.8125rem;
+  color: var(--color-primary);
+  opacity: 0.8;
+  margin-bottom: var(--space-4);
+}
+
+.billSummary {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin-bottom: var(--space-4);
 }
 
 .billRow {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.9rem;
-    color: #64748b;
-    margin-bottom: 0.25rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  margin-bottom: var(--space-2);
 }
 
-.minusText {
-    color: #16a34a;
-    /* Green for paid amount */
+.totalRow {
+  border-top: 1px dashed var(--color-border);
+  padding-top: var(--space-2);
+  margin-top: var(--space-2);
+  font-weight: 700;
+  font-size: 1rem;
 }
 
-.divider {
-    height: 1px;
-    background: #cbd5e1;
-    margin: 0.5rem 0;
+.actionRow {
+  display: flex;
+  gap: var(--space-3);
 }
 
-.billTotal {
-    display: flex;
-    justify-content: space-between;
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: #0f172a;
+/* Final Receipt */
+.receipt {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  margin-top: var(--space-4);
+  position: relative;
 }
 
-.splitPayInfo {
-    font-size: 0.85rem;
-    background: #fff;
-    padding: 0.5rem;
-    border-radius: 6px;
-    margin: 0.5rem 0;
-    border: 1px dashed #cbd5e1;
+.receipt::before,
+.receipt::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background-size: 20px 10px;
+  background-repeat: repeat-x;
+}
+
+.receipt::before {
+  top: -5px;
+  background-image: radial-gradient(circle at 10px 10px, var(--color-bg) 10px, transparent 0);
+}
+
+.receipt::after {
+  bottom: -5px;
+  background-image: radial-gradient(circle at 10px 0, var(--color-bg) 10px, transparent 0);
+}
+
+.receiptHeader {
+  text-align: center;
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.receiptTitle {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.receiptTotal {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-success);
 }

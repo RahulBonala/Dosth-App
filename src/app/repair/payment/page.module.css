@@ -1,327 +1,368 @@
 .main {
-    padding: 1rem;
-    padding-bottom: 100px;
-    background-color: #ffffff;
-    min-height: 100vh;
-    font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  padding: var(--space-6) 0 var(--space-12);
+  background: var(--color-bg);
 }
 
 .mainCentered {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 2rem;
-    text-align: center;
-    background: #f9fafb;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+  text-align: center;
+  background: var(--color-bg);
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
 }
 
 .paymentHeader {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
 }
 
 .backBtn {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-text);
+  transition: all 0.2s;
 }
 
-.paymentHeader h1 {
-    font-size: 1.2rem;
-    font-weight: 600;
+.backBtn:hover {
+  background: var(--color-surface-raised);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
 }
 
-.blueCard {
-    background: #1a56db;
-    color: white;
-    padding: 1.5rem;
-    border-radius: 16px;
-    margin-bottom: 2rem;
+.title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-text);
+  margin: 0;
+  letter-spacing: -0.01em;
 }
 
-.blueCard p {
-    font-size: 0.9rem;
-    opacity: 0.9;
-    margin-bottom: 0.25rem;
+/* Gradient Card */
+.amountCard {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  padding: var(--space-8);
+  border-radius: var(--radius-xl);
+  color: #fff;
+  margin-bottom: var(--space-8);
+  box-shadow: var(--shadow-xl), var(--shadow-glow-primary);
+  position: relative;
+  overflow: hidden;
 }
 
-.blueCard h2 {
-    font-size: 2rem;
-    font-weight: 700;
+.amountCard::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
 }
 
+.amountLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  opacity: 0.8;
+  margin-bottom: var(--space-2);
+}
+
+.amountValue {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+/* Sections */
 .section {
-    margin-bottom: 2rem;
+  margin-bottom: var(--space-8);
 }
 
-.section h3 {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #374151;
+.sectionTitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-4);
 }
 
+/* Option Cards */
 .optionCard {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    margin-bottom: 1rem;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-3);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.optionCard:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.optionCard input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--color-primary);
 }
 
 .optionContent {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex: 1;
 }
 
 .iconBox {
-    width: 40px;
-    height: 40px;
-    background: #f3f4f6;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
+  width: 44px;
+  height: 44px;
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
 }
 
-.optionContent h4 {
-    font-size: 1rem;
-    font-weight: 600;
-    margin: 0;
+.optionText h4 {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 2px;
 }
 
-.optionContent p {
-    font-size: 0.85rem;
-    color: #6b7280;
-    margin: 0;
+.optionText p {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin: 0;
 }
 
+/* UPI Grid */
 .upiGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
 }
 
 .upiItem {
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-2);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
-.iconBoxSm {
-    width: 32px;
-    height: 32px;
-    background: #f3f4f6;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: #1a56db;
+.upiItem:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-soft);
 }
 
-.inputRow {
-    display: flex;
-    gap: 0.5rem;
+.upiIcon {
+  width: 40px;
+  height: 40px;
+  background: var(--color-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: var(--color-primary);
 }
 
-.input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    background: #f9fafb;
-}
-
-.addBtn {
-    padding: 0 1.5rem;
-    background: white;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: white;
-    padding: 1rem;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
-    text-align: center;
-}
-
-.paySecureBtn {
-    width: 100%;
-    max-width: 400px;
-    background: #4ade80;
-    /* Green */
-    color: white;
-    padding: 1rem;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.secureText {
-    font-size: 0.8rem;
-    color: #9ca3af;
-    margin-top: 0.5rem;
+.upiLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
 }
 
 /* Processing State */
-.loader {
-    width: 50px;
-    height: 50px;
-    border: 4px solid #e5e7eb;
-    border-top: 4px solid #1a56db;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin-bottom: 2rem;
+.shimmerLoader {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 4px solid var(--color-primary-soft);
+  border-top-color: var(--color-primary);
+  animation: rotate 1s linear infinite;
+  margin-bottom: var(--space-6);
 }
 
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
+@keyframes rotate {
+  to { transform: rotate(360deg); }
 }
 
 .processingTitle {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: var(--space-2);
 }
 
 .processingText {
-    color: #6b7280;
-    margin-bottom: 2rem;
-}
-
-.dots {
-    font-size: 2rem;
-    color: #1a56db;
-    letter-spacing: 4px;
+  color: var(--color-text-secondary);
+  font-size: 0.9375rem;
 }
 
 /* Success State */
-.successIconWrapper {
-    width: 80px;
-    height: 80px;
-    background: #ecfdf5;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
+.checkContainer {
+  width: 80px;
+  height: 80px;
+  background: var(--color-success);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-6);
+  animation: successScale 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  box-shadow: var(--shadow-glow-success);
 }
 
-.successIcon {
-    width: 50px;
-    height: 50px;
-    background: #059669;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: bold;
+.checkIcon {
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  animation: drawCheck 0.5s 0.2s ease both;
 }
 
 .successTitle {
-    color: #059669;
-    margin-bottom: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-success);
+  margin-bottom: var(--space-2);
 }
 
 .successText {
-    color: #6b7280;
-    margin-bottom: 2rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-8);
 }
 
-.receiptCard {
-    background: white;
-    width: 100%;
-    max-width: 350px;
-    border-radius: 16px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    margin-bottom: 2rem;
+.receipt {
+  width: 100%;
+  max-width: 400px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  margin-bottom: var(--space-8);
+  text-align: left;
 }
 
 .receiptRow {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
-    color: #4b5563;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+  font-size: 0.875rem;
 }
 
-.receiptAmount {
-    color: #059669;
-    font-size: 1.2rem;
-    font-weight: 700;
+.receiptRow label {
+  color: var(--color-text-muted);
 }
 
-.divider {
-    height: 1px;
-    background: #e5e7eb;
-    margin: 1rem 0;
+.receiptRow span {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.receiptRow .amount {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-primary);
 }
 
 .mono {
-    font-family: monospace;
-    font-size: 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary) !important;
 }
 
-.actionButtons {
-    display: flex;
-    gap: 1rem;
-    width: 100%;
-    max-width: 350px;
-    margin-bottom: 2rem;
+.receiptDivider {
+  height: 1px;
+  background: var(--color-border);
+  margin: var(--space-4) 0;
+  border: none;
 }
 
-.outlineBtn {
-    flex: 1;
-    padding: 10px;
-    background: white;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    font-weight: 500;
-    cursor: pointer;
+.receiptActions {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
 }
 
-.doneBtn {
-    width: 100%;
-    max-width: 400px;
-    background: #1a56db;
-    color: white;
-    padding: 1rem;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
+.receiptBtn {
+  flex: 1;
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-surface);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.receiptBtn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+/* Footer Actions */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-4) var(--space-6) calc(var(--space-4) + env(safe-area-inset-bottom, 0px));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.secureBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
 }
