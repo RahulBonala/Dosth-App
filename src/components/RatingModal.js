@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import Button from '../components/ui/Button';
+import Button from './ui/Button';
 import styles from './RatingModal.module.css';
 
 export default function RatingModal({ onClose, onSubmit }) {
