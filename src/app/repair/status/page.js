@@ -2,15 +2,15 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import Header from '../../../components/layout/Header';
-import BottomNav from '../../../components/layout/BottomNav';
-import RatingModal from '../../../components/RatingModal';
-import MapPlaceholder from '../../../components/MapPlaceholder';
-import Button from '../../../components/ui/Button';
-import Badge from '../../../components/ui/Badge';
-import Avatar from '../../../components/ui/Avatar';
-import ToastContainer from '../../../components/ui/Toast';
-import { useToast } from '../../../hooks/useToast';
+import Header from '@/components/layout/Header';
+import BottomNav from '@/components/layout/BottomNav';
+import RatingModal from '@/components/RatingModal';
+import MapPlaceholder from '@/components/MapPlaceholder';
+import Button from '@/components/ui/Button';
+import Badge from '@/components/ui/Badge';
+import Avatar from '@/components/ui/Avatar';
+import ToastContainer from '@/components/ui/Toast';
+import { useToast } from '@/hooks/useToast';
 import styles from './page.module.css';
 
 const STEPS = {

@@ -2,8 +2,8 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import Header from '../../../components/layout/Header';
-import BottomNav from '../../../components/layout/BottomNav';
+import Header from '@/components/layout/Header';
+import BottomNav from '@/components/layout/BottomNav';
 import styles from './page.module.css';
 
 const PROVIDERS = [

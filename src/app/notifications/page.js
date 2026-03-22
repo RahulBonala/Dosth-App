@@ -1,10 +1,10 @@
 'use client';
 import { useState } from 'react';
-import Header from '../../components/layout/Header';
-import BottomNav from '../../components/layout/BottomNav';
-import Badge from '../../components/ui/Badge';
-import Button from '../../components/ui/Button';
-import Avatar from '../../components/ui/Avatar';
+import Header from '@/components/layout/Header';
+import BottomNav from '@/components/layout/BottomNav';
+import Badge from '@/components/ui/Badge';
+import Button from '@/components/ui/Button';
+import Avatar from '@/components/ui/Avatar';
 import styles from './page.module.css';
 
 const notifications = [

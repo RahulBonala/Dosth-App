@@ -1,12 +1,12 @@
 'use client';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState, Suspense } from 'react';
-import Header from '../../components/layout/Header';
-import BottomNav from '../../components/layout/BottomNav';
-import Footer from '../../components/layout/Footer';
-import ServiceCard from '../../components/ServiceCard';
-import ToastContainer from '../../components/ui/Toast';
-import { useToast } from '../../hooks/useToast';
+import Header from '@/components/layout/Header';
+import BottomNav from '@/components/layout/BottomNav';
+import Footer from '@/components/layout/Footer';
+import ServiceCard from '@/components/ServiceCard';
+import ToastContainer from '@/components/ui/Toast';
+import { useToast } from '@/hooks/useToast';
 import styles from './page.module.css';
 
 const services = [

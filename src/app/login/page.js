@@ -3,10 +3,10 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import Button from '../../components/ui/Button';
-import Input from '../../components/ui/Input';
-import ToastContainer from '../../components/ui/Toast';
-import { useToast } from '../../hooks/useToast';
+import Button from '@/components/ui/Button';
+import Input from '@/components/ui/Input';
+import ToastContainer from '@/components/ui/Toast';
+import { useToast } from '@/hooks/useToast';
 import styles from './page.module.css';
 
 export default function LoginPage() {

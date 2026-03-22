@@ -1,9 +1,9 @@
 'use client';
 import { useState, Suspense, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import Header from '../../../components/layout/Header';
-import Button from '../../../components/ui/Button';
-import Input from '../../../components/ui/Input';
+import Header from '@/components/layout/Header';
+import Button from '@/components/ui/Button';
+import Input from '@/components/ui/Input';
 import styles from './page.module.css';
 
 function PaymentContent() {

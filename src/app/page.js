@@ -1,9 +1,9 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import Header from '../components/layout/Header';
-import Footer from '../components/layout/Footer';
-import BottomNav from '../components/layout/BottomNav';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+import BottomNav from '@/components/layout/BottomNav';
 import styles from './page.module.css';
 
 // Animated counter hook

@@ -3,11 +3,11 @@ import { useState } from 'react';
 import Header from '../../components/layout/Header';
 import Footer from '../../components/layout/Footer';
 import BottomNav from '../../components/layout/BottomNav';
-import Avatar from '../../components/ui/Avatar';
-import Badge from '../../components/ui/Badge';
-import Button from '../../components/ui/Button';
-import ToastContainer from '../../components/ui/Toast';
-import { useToast } from '../../hooks/useToast';
+import Avatar from '@/components/ui/Avatar';
+import Badge from '@/components/ui/Badge';
+import Button from '@/components/ui/Button';
+import ToastContainer from '@/components/ui/Toast';
+import { useToast } from '@/hooks/useToast';
 import styles from './page.module.css';
 
 const stats = [
