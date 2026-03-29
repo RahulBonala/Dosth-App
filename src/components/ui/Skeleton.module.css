@@ -22,7 +22,7 @@
   animation: shimmer 1.5s infinite;
 }
 
-[data-theme="dark"] .skeleton::after {
+[data-theme='dark'] .skeleton::after {
   background: linear-gradient(
     90deg,
     transparent 0%,

@@ -6,14 +6,17 @@ export default function Button({
   size = 'medium',
   className = '',
   disabled = false,
+  loading = false,
+  fullWidth = false,
   ...props
 }) {
   return (
     <button
-      className={`${styles.button} ${styles[variant]} ${styles[size]} ${className}`}
-      disabled={disabled}
+      className={`${styles.button} ${styles[variant]} ${styles[size]} ${fullWidth ? styles.fullWidth : ''} ${className}`}
+      disabled={disabled || loading}
       {...props}
     >
+      {loading && <span className={styles.spinner} aria-hidden="true" />}
       {children}
     </button>
   );

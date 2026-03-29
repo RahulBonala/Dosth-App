@@ -12,8 +12,9 @@
 .heroBg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 70% 50%, rgba(79, 70, 229, 0.08) 0%, transparent 60%),
-              radial-gradient(ellipse at 20% 80%, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
+  background:
+    radial-gradient(ellipse at 70% 50%, rgba(79, 70, 229, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 80%, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
   z-index: 0;
 }
 
@@ -469,7 +470,7 @@
 
 /* ===== STATS ===== */
 .statsSection {
-  background: #1E1B4B;
+  background: #1e1b4b;
   padding: var(--space-16) 0;
 }
 
@@ -489,7 +490,8 @@
   }
 }
 
-.statItem {}
+.statItem {
+}
 
 .statValue {
   font-family: var(--font-heading);
@@ -589,7 +591,12 @@
 
 /* ===== CTA BANNER ===== */
 .ctaBanner {
-  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 50%, var(--color-primary-light) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-dark) 0%,
+    var(--color-primary) 50%,
+    var(--color-primary-light) 100%
+  );
   padding: var(--space-20) var(--space-6);
   text-align: center;
 }

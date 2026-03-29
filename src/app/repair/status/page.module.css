@@ -96,9 +96,15 @@
 }
 
 @keyframes pulseMarker {
-  0% { box-shadow: 0 0 0 0 var(--color-primary-soft); }
-  70% { box-shadow: 0 0 0 10px transparent; }
-  100% { box-shadow: 0 0 0 0 transparent; }
+  0% {
+    box-shadow: 0 0 0 0 var(--color-primary-soft);
+  }
+  70% {
+    box-shadow: 0 0 0 10px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
 }
 
 .timelineContent {

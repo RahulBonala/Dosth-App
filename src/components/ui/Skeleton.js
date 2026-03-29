@@ -6,10 +6,5 @@ export default function Skeleton({ width, height, variant = 'text', className = 
     height: height ? (typeof height === 'number' ? `${height}px` : height) : '1rem',
   };
 
-  return (
-    <div
-      className={`${styles.skeleton} ${styles[variant]} ${className}`}
-      style={style}
-    />
-  );
+  return <div className={`${styles.skeleton} ${styles[variant]} ${className}`} style={style} />;
 }

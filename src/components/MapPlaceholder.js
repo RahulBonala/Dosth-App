@@ -16,7 +16,7 @@ export default function MapPlaceholder({ status, text }) {
           <div className={styles.markerIcon}>🏢</div>
           <span className={styles.label}>Repair Center</span>
         </div>
-        
+
         <div className={`${styles.marker} ${styles.user}`}>
           <div className={styles.markerPulse} />
           <div className={styles.markerIcon}>🏠</div>
@@ -29,7 +29,7 @@ export default function MapPlaceholder({ status, text }) {
           <div className={styles.riderTrail} />
         </div>
       </div>
-      
+
       {text && (
         <div className={styles.statusOverlay}>
           <div className={styles.liveDot} />

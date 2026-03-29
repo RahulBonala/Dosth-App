@@ -53,7 +53,7 @@
   background: var(--color-primary-soft);
 }
 
-[data-theme="dark"] .itemUnread {
+[data-theme='dark'] .itemUnread {
   background: rgba(79, 70, 229, 0.1);
 }
 

@@ -14,7 +14,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
+  background-image:
     linear-gradient(var(--color-border) 1px, transparent 1px),
     linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
   background-size: 80px 80px;
@@ -33,7 +33,7 @@
   opacity: 0.4;
 }
 
-[data-theme="dark"] .water {
+[data-theme='dark'] .water {
   background-color: #1e3a5f;
   opacity: 0.3;
 }
@@ -50,7 +50,7 @@
   opacity: 0.4;
 }
 
-[data-theme="dark"] .park {
+[data-theme='dark'] .park {
   background-color: #1e3f1e;
   opacity: 0.3;
 }
@@ -119,8 +119,14 @@
 }
 
 @keyframes pulseRipple {
-  0% { transform: scale(1); opacity: 0.4; }
-  100% { transform: scale(2.5); opacity: 0; }
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
 }
 
 .label {
@@ -135,8 +141,14 @@
   box-shadow: var(--shadow-sm);
 }
 
-.shop { top: 20%; left: 20%; }
-.user { bottom: 25%; right: 25%; }
+.shop {
+  top: 20%;
+  left: 20%;
+}
+.user {
+  bottom: 25%;
+  right: 25%;
+}
 
 /* Rider */
 .rider {
@@ -147,7 +159,7 @@
 
 .riderIcon {
   font-size: 2rem;
-  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
   transform-origin: center;
 }
 
@@ -164,18 +176,42 @@
 }
 
 @keyframes moveToUser {
-  0% { top: -10%; left: 90%; transform: scaleX(-1); }
-  100% { top: 65%; left: 70%; transform: scaleX(-1); }
+  0% {
+    top: -10%;
+    left: 90%;
+    transform: scaleX(-1);
+  }
+  100% {
+    top: 65%;
+    left: 70%;
+    transform: scaleX(-1);
+  }
 }
 
 @keyframes moveToShop {
-  0% { top: 65%; left: 70%; transform: scaleX(1); }
-  100% { top: 20%; left: 20%; transform: scaleX(1); }
+  0% {
+    top: 65%;
+    left: 70%;
+    transform: scaleX(1);
+  }
+  100% {
+    top: 20%;
+    left: 20%;
+    transform: scaleX(1);
+  }
 }
 
 @keyframes deliverToUser {
-  0% { top: 20%; left: 20%; transform: scaleX(-1); }
-  100% { top: 65%; left: 70%; transform: scaleX(-1); }
+  0% {
+    top: 20%;
+    left: 20%;
+    transform: scaleX(-1);
+  }
+  100% {
+    top: 65%;
+    left: 70%;
+    transform: scaleX(-1);
+  }
 }
 
 /* Overlay */
@@ -207,7 +243,16 @@
 }
 
 @keyframes pulseDot {
-  0% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.2); }
-  100% { opacity: 1; transform: scale(1); }
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
